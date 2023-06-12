@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="d-flex justify-content-between">
+    <h3>All Customers</h3>
+    <button type="button" class="btn btn-primary" [routerLink]="'/add-customer'">new Customer</button>
+  </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">TP</th>
+      <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr *ngFor="let customer of customers">
+      <th scope="row"*ngIf="customer.id!=null">{{customer.id}}</th>
+      <td *ngIf="customer.name!=null">{{customer.name}}</td>
+      <td *ngIf="customer.tp!=null">{{customer.tp}}</td>
+      <td>
+        <button type="button" class="btn btn-light"  [routerLink]="'/edit-customer'">Edit</button>
+        &nbsp;
+        <button type="button" class="btn btn-light"(click)="delete.deleteData(customer)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

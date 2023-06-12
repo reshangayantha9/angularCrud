@@ -1,0 +1,27 @@
+<div class="container">
+  <button type="button" class="btn btn-primary" [routerLink]="'/'">Home</button>
+  <form [formGroup]='form'(ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="id" class="form-label">Id</label>
+      <input type="text" class="form-control" id="id" aria-describedby="emailHelp"formControlName="cusid">
+      <div class="alert alert-warning" role="alert" *ngIf='formAltaControls.cusid.touched && formAltaControls.cusid.invalid'>
+        The Id is required
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" aria-describedby="emailHelp"formControlName="name">
+      <div class="alert alert-warning" role="alert" *ngIf='formAltaControls.name.touched && formAltaControls.name.invalid'>
+        The Name is required
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="tp" class="form-label">TP</label>
+      <input type="text" class="form-control" id="tp" aria-describedby="emailHelp"formControlName="tp">
+      <div class="alert alert-warning" role="alert" *ngIf='formAltaControls.tp.touched && formAltaControls.tp.invalid'>
+        The Id is required
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary"[disabled]="form.invalid">Submit</button>
+  </form>
+</div>
